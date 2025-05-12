@@ -8,7 +8,7 @@ from typing_extensions import TypedDict
 
 load_dotenv()
 
-llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
+llm = init_chat_model("ollama:llama2")
 
 
 class MessageClassifier(BaseModel):
@@ -56,6 +56,7 @@ def router(state: State):
 
 
 def therapist_agent(state: State):
+    print("Therapist agent invoked")
     last_message = state["messages"][-1]
 
     messages = [
@@ -75,6 +76,7 @@ def therapist_agent(state: State):
 
 
 def logical_agent(state: State):
+    print("Logical agent invoked")
     last_message = state["messages"][-1]
 
     messages = [
