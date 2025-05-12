@@ -56,7 +56,7 @@ def router(state: State):
 
 
 def therapist_agent(state: State):
-    print("Therapist agent invoked")
+    print("👩‍⚕️ Therapist agent invoked\n")
     last_message = state["messages"][-1]
 
     messages = [
@@ -76,7 +76,7 @@ def therapist_agent(state: State):
 
 
 def logical_agent(state: State):
-    print("Logical agent invoked")
+    print("💻 Logical agent invoked\n")
     last_message = state["messages"][-1]
 
     messages = [
@@ -84,7 +84,7 @@ def logical_agent(state: State):
             "role": "system",
             "content": """You are a purely logical assistant. Focus only on facts and information.
                 Provide clear, concise answers based on logic and evidence.
-                Do not address emotions or provide emotional support.
+                Do not address emotions or provide emotional support. 
                 Be direct and straightforward in your responses.""",
         },
         {"role": "user", "content": last_message.content},
